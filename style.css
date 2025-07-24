@@ -169,6 +169,13 @@ ul {
 
 }
 
+h1{
+        font-size: 45px;
+    margin-bottom: 35px;
+    font-family: 'Protest Guerrilla';
+    color: rgb(227, 227, 9);
+    filter: drop-shadow(5px 7px black);
+}
 .texto h2 {
     font-size: 45px;
     margin-bottom: 35px;
