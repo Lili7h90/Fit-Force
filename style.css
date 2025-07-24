@@ -1,0 +1,563 @@
+@font-face {
+    font-family: 'Protest Guerrilla';
+    src: url(/fonts/ProtestGuerrilla-Regular.ttf);
+}
+@font-face {
+    font-family: 'Righteous';
+    src: url(/fonts/Righteous-Regular.ttf);
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(227, 227, 9);
+}
+header{
+    background-color: rgb(32, 31, 31);
+}
+.flex {
+    display: flex;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    justify-content: start;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+
+a {
+    text-decoration: none;
+    color: rgb(227, 227, 9);
+    font-family: 'Protest Guerrilla';
+    filter: drop-shadow(5px 7px black);
+    transition: ease-in-out .2s;
+}
+
+a:hover {
+    transform: skewX(-15deg) scale(1.2);
+
+}
+
+.menu {
+    display: flex;
+    width: 900px;
+}
+
+ul {
+    display: flex;
+}
+
+.menu-text {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Logo a la izquierda, toggle a la derecha */
+    position: fixed;
+    top: 0;
+    z-index: 100000;
+}
+
+.nav .menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #000;
+    transition: 0.3s;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .nav .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgb(32, 31, 31);
+        z-index: 1000;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav.active .menu {
+        display: flex;
+    }
+
+    /* Transición a X */
+    .nav-toggle.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+.logo {
+    display: flex;
+    width: 150px;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.logo:hover {
+    transform: skewX(-15deg) scale(1.2);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+.container ul {
+    display: flex;
+    padding: 0%;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.container li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.texto {
+    position: absolute;
+    text-align: center;
+    padding: 0 250px;
+    top: 250px;
+    color: white;
+
+}
+
+.texto h2 {
+    font-size: 45px;
+    margin-bottom: 35px;
+    font-family: 'Protest Guerrilla';
+    color: rgb(227, 227, 9);
+    filter: drop-shadow(5px 7px black);
+}
+
+.text-banner {
+    font-size: 25px;
+    font-family: 'Righteous';
+    color: rgb(227, 227, 9);
+    filter: drop-shadow(2px 5px black);
+}
+
+.container img {
+    width: 100%;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+
+@media(max-width:991px) {
+    body {
+        padding: 30px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .texto {
+        top: 50px;
+        padding: 0 25px;
+    }
+
+    .texto h2 {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .texto p {
+        font-size: 15px;
+    }
+}
+
+/* Final Banner */
+
+/* Inicio sección Rutinas */
+.rutinas {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(32, 31, 31);
+    margin-top: 15px;
+}
+
+.tittle-routine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rutinas-tittle {
+    font-size: 45px;
+    font-family: 'Protest Guerrilla';
+    color: rgb(227, 227, 9);
+    filter: drop-shadow(2px 5px black);
+    margin-top: 45px;
+}
+
+.cards-container {
+    justify-content: space-evenly;
+    width: 1280px;
+}
+
+.container-card {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    width: 1280px;
+}
+
+.card {
+    justify-content: center;
+    flex-direction: column;
+    border: solid rgb(227, 227, 9);
+    border-radius: 25px;
+    height: 375px;
+    transition: .2s ease-in-out;
+}
+
+.card:hover {
+    scale: 1.1;
+    transform: skew(-3deg);
+}
+
+.tittle-card {
+    font-size: 25px;
+    color: rgb(227, 227, 9);
+    font-family: 'Righteous';
+    filter: drop-shadow(2px 5px black);
+}
+
+.rookie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 350px;
+    height: auto;
+    border: solid 1px rgb(227, 227, 9);
+    filter: drop-shadow(0px 5px black);
+    border-radius: 15px;
+}
+
+.boton-card {
+    background-color: rgb(227, 227, 9);
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Righteous';
+    filter: drop-shadow(2px 5px black);
+    transition: .2s ease-in-out;
+    margin-top: 15px;
+}
+
+.boton-card:hover {
+    transform: skewX(-15deg) translateY(2px);
+    background-color: rgb(144, 144, 11);
+}
+
+/* Final sección rutinas */
+
+/* Inicio sección calendario */
+.calendario {
+    margin-top: 15px;
+    height: 100vh;
+    background-color: rgb(32, 31, 31);
+    filter: drop-shadow(2px 2px black);
+
+}
+
+.title-calendario {
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+
+}
+
+.calendario-container {
+    justify-content: center;
+    margin-top: 55px;
+    filter: drop-shadow(2px 5px black);
+}
+
+.calendar-tittle {
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-family: 'Protest Guerrilla';
+    text-align: center;
+    color: rgb(227, 227, 9);
+    filter: drop-shadow(3px 5px black);
+}
+
+.semana {
+    justify-content: space-between;
+    width: 1280px;
+    height: 350px;
+    border: solid rgb(227, 227, 9);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 40px;
+    background-image: url(/img/stavros-papadimitriou-60xqDdncSKY-unsplash.jpg);
+    background-size: cover;
+}
+
+.day {
+    margin-top: 85px;
+    color: rgb(227, 227, 9);
+    font-size: 30px;
+    font-family: 'Protest Guerrilla';
+    filter: drop-shadow(2px 5px black);
+}
+
+.day-rout {
+    font-size: 25px;
+    font-family: 'Righteous';
+    color: rgb(227, 227, 9);
+    filter: drop-shadow(1px 1px black);
+    font-weight: light;
+}
+
+/* Final sección Calendario */
+
+/* Inicio sección Nutrición */
+.nutricion {
+    margin-top: 15px;
+    background-image: url(/img/rebeca-g-sendroiu-5DtZd45_Sz4-unsplash.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-color: rgb(32, 31, 31);
+    opacity: 1;
+}
+
+.title-nutricion {
+    width: 1280px;
+}
+.nutri-card{
+    background-color: rgb(32, 31, 31);
+}
+.tittle {
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    font-family: 'Protest Guerrilla';
+    text-align: center;
+    color: rgb(227, 227, 9);
+    filter: drop-shadow(3px 5px black);
+}
+
+.container-nutricion {
+    margin-top: 45px;
+}
+
+
+/* Comentarios */
+.comentarios {
+    background-color: rgb(32, 31, 31);
+    height: 100vh;
+    margin-top: 15px;
+}
+
+.tittle-coment {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+    font-family: 'Protest Guerrilla';
+    text-align: center;
+    color: rgb(227, 227, 9);
+    filter: drop-shadow(3px 5px black);
+    padding-top: 45px;
+}
+
+.container-coment {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 65px;
+    width: 1280px;
+}
+
+.coment-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    max-width: 350px;
+    gap: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.coment-card .coment-img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.coment {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.coment-text {
+    font-size: 18px;
+    color: #333;
+    margin: 0 0 12px;
+    line-height: 1.4;
+}
+
+.coment-cliente strong {
+    display: block;
+    font-size: 18px;
+    color: #111;
+}
+
+.coment-cliente span {
+    font-size: 16px;
+    color: #666;
+}
+
+
+
+.contacto{
+    background-color: rgb(32, 31, 31);
+    margin-top: 15px;
+    height: 80vh;
+}
+
+form {
+    margin-top: 65px;
+    max-width: 400px;
+    border: 1px solid rgb(227, 227, 9);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgb(133, 129, 129);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-family: 'Righteous';
+
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 25px;
+}
+.boton-contacto{
+    justify-content: center;
+    display: flex;
+    padding: 5px 20px;
+}
+
+/* FOOTER */
+.footer-container{
+    background-color: rgb(32, 31, 31);
+    margin-top: 15px;
+    display: flex;
+    height: 50vh;
+}
+.footer-links{
+    width: 1280px;
+    margin-top: 45px;
+    display: flex;
+    justify-content:space-evenly;
+}
+.footer-text{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    font-size: 20px;
+    cursor: pointer;
+}
+.footer-a{
+    font-family: 'Righteous';
+    font-size: 20px;
+    transition: .2s ease-in-out;
+}
